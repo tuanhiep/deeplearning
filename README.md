@@ -1,2 +1,2 @@
 # deeplearning
-This project to practice knowledge about deep learning
+This project to control knowledge about deep learning
