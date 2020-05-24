@@ -87,11 +87,11 @@ np.random.seed(1)
 
 # ## 3 - Convolutional Neural Networks
 #
-# Although programming frameworks make convolutions easy to use, they remain one of the hardest concepts to understand in Deep Learning. A convolution layer transforms an input volume into an output volume of different size, as shown below.
+# Although programming frameworks make convolutions easy to use, they remain one of the hardest concepts to understand in Deep Learning. A convolutional_network layer transforms an input volume into an output volume of different size, as shown below.
 #
 # <img src="images/conv_nn.png" style="width:350px;height:200px;">
 #
-# In this part, you will build every step of the convolution layer. You will first implement two helper functions: one for zero padding and the other for computing the convolution function itself.
+# In this part, you will build every step of the convolutional_network layer. You will first implement two helper functions: one for zero padding and the other for computing the convolutional_network function itself.
 
 # ### 3.1 - Zero-Padding
 #
@@ -102,7 +102,7 @@ np.random.seed(1)
 #
 # The main benefits of padding are the following:
 #
-# - It allows you to use a CONV layer without necessarily shrinking the height and width of the volumes. This is important for building deeper networks, since otherwise the height/width would shrink as you go to deeper layers. An important special case is the "same" convolution, in which the height/width is exactly preserved after one layer.
+# - It allows you to use a CONV layer without necessarily shrinking the height and width of the volumes. This is important for building deeper networks, since otherwise the height/width would shrink as you go to deeper layers. An important special case is the "same" convolutional_network, in which the height/width is exactly preserved after one layer.
 #
 # - It helps us keep more of the information at the border of an image. Without padding, very few values at the next layer would be affected by pixels as the edges of an image.
 #
@@ -173,9 +173,9 @@ axarr[1].imshow(x_pad[0, :, :, 0])
 #  [ 0.  0.]]
 # ```
 
-# ### 3.2 - Single step of convolution
+# ### 3.2 - Single step of convolutional_network
 #
-# In this part, implement a single step of convolution, in which you apply the filter to a single position of the input. This will be used to build a convolutional unit, which:
+# In this part, implement a single step of convolutional_network, in which you apply the filter to a single position of the input. This will be used to build a convolutional unit, which:
 #
 # - Takes an input volume
 # - Applies a filter at every position of the input
@@ -184,7 +184,7 @@ axarr[1].imshow(x_pad[0, :, :, 0])
 # <img src="images/Convolution_schematic.gif" style="width:500px;height:300px;">
 # <caption><center> <u> <font color='purple'> **Figure 2** </u><font color='purple'>  : **Convolution operation**<br> with a filter of 3x3 and a stride of 1 (stride = amount you move the window each time you slide) </center></caption>
 #
-# In a computer vision application, each value in the matrix on the left corresponds to a single pixel value, and we convolve a 3x3 filter with the image by multiplying its values element-wise with the original matrix, then summing them up and adding a bias. In this first step of the exercise, you will implement a single step of convolution, corresponding to applying a filter to just one of the positions to get a single real-valued output.
+# In a computer vision application, each value in the matrix on the left corresponds to a single pixel value, and we convolve a 3x3 filter with the image by multiplying its values element-wise with the original matrix, then summing them up and adding a bias. In this first step of the exercise, you will implement a single step of convolutional_network, corresponding to applying a filter to just one of the positions to get a single real-valued output.
 #
 # Later in this notebook, you'll apply this function to multiple positions of the input to implement the full convolutional operation.
 #
@@ -249,7 +249,7 @@ print("Z =", Z)
 
 # ### 3.3 - Convolutional Neural Networks - Forward pass
 #
-# In the forward pass, you will take many filters and convolve them on the input. Each 'convolution' gives you a 2D matrix output. You will then stack these outputs to get a 3D volume:
+# In the forward pass, you will take many filters and convolve them on the input. Each 'convolutional_network' gives you a 2D matrix output. You will then stack these outputs to get a 3D volume:
 #
 # <center>
 # <video width="620" height="440" src="images/conv_kiank.mp4" type="video/mp4" controls>
@@ -279,10 +279,10 @@ print("Z =", Z)
 #
 #
 # **Reminder**:
-# The formulas relating the output shape of the convolution to the input shape is:
+# The formulas relating the output shape of the convolutional_network to the input shape is:
 # $$ n_H = \lfloor \frac{n_{H_{prev}} - f + 2 \times pad}{stride} \rfloor +1 $$
 # $$ n_W = \lfloor \frac{n_{W_{prev}} - f + 2 \times pad}{stride} \rfloor +1 $$
-# $$ n_C = \text{number of filters used in the convolution}$$
+# $$ n_C = \text{number of filters used in the convolutional_network}$$
 #
 # For this exercise, we won't worry about vectorization, and will just implement everything with for-loops.
 
@@ -306,7 +306,7 @@ print("Z =", Z)
 
 def conv_forward(A_prev, W, b, hparameters):
     """
-    Implements the forward propagation for a convolution function
+    Implements the forward propagation for a convolutional_network function
 
     Arguments:
     A_prev -- output activations of the previous layer,
@@ -704,7 +704,7 @@ print("A =\n", A)
 
 def conv_backward(dZ, cache):
     """
-    Implement the backward propagation for a convolution function
+    Implement the backward propagation for a convolutional_network function
 
     Arguments:
     dZ -- gradient of the cost with respect to the output of the conv layer (Z), numpy array of shape (m, n_H, n_W, n_C)
