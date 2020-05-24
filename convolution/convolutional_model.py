@@ -1133,8 +1133,4 @@ print('dA_prev[1,1] = ', dA_prev[1, 1])
 # </tr>
 # </table>
 
-# ### Congratulations !
-#
-# Congratulations on completing this assignment. You now understand how convolutional neural networks work. You have implemented all the building blocks of a neural network. In the next assignment you will implement a ConvNet using TensorFlow.
 
-# In[ ]:
